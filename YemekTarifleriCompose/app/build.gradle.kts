@@ -56,4 +56,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    dependencies {
+        val nav_version = "2.9.0"
+
+        implementation("androidx.navigation:navigation-compose:$nav_version")
+        implementation ("com.google.code.gson:gson:2.13.1")
+
+    }
 }
