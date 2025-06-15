@@ -1,21 +1,19 @@
 # Jetpack Compose State Management & RESTful API Example
 
-Bu proje, Jetpack Compose ile geliştirilen basit bir Android uygulamasıdır. Proje kapsamında:
+This project is a simple Android application developed with Jetpack Compose. It demonstrates:
 
-- **State management (durum yönetimi)** kullanımı,
-- **RESTful API** ile veri çekme (Retrofit kullanılarak),
-- **MVVM mimarisi**,
-- **Jetpack Compose** ile modern kullanıcı arayüzü tasarımı
+- Usage of **state management**,
+- Fetching data using a **RESTful API** (via Retrofit),
+- Implementation of **MVVM architecture**,
+- Modern UI design with **Jetpack Compose**
 
-uygulamalı olarak gösterilmiştir.
+## Features
 
-## Özellikler
+- Fetches user data from the JSONPlaceholder API.
+- Displays the user list with LazyColumn.
+- Controls data flow using ViewModel and state management.
 
-- Kullanıcı verilerini JSONPlaceholder API üzerinden çeker.
-- LazyColumn ile kullanıcı listesi gösterilir.
-- ViewModel ve state yönetimi ile veri akışı kontrol edilir.
-
-## Kullanılan Teknolojiler
+## Technologies Used
 
 - Jetpack Compose
 - Retrofit
@@ -24,7 +22,6 @@ uygulamalı olarak gösterilmiştir.
 - Coroutines
 - LiveData / State
 
-## API Kaynağı
+## API Source
 
 - [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
-
