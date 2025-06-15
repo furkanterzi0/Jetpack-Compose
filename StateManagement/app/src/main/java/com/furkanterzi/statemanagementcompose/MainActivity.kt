@@ -13,11 +13,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.furkanterzi.statemanagementcompose.ui.theme.StateManagementComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,22 +48,50 @@ fun MainScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        Text("Hello Compose")
+        val username = remember { mutableStateOf("") }
+        val password = remember { mutableStateOf("") }
+
+        MyText("Login")
+        Spacer(modifier = Modifier.padding(10.dp))
+
+        TextField(
+            value = username.value,
+            onValueChange = { username.value = it },
+            placeholder = { Text("Username") }
+        )
+
+        Spacer(modifier = Modifier.padding(10.dp))
+
+        TextField(
+            value = password.value,
+            onValueChange = { password.value = it },
+            placeholder = { Text("Password") }
+        )
 
         Spacer(modifier = Modifier.padding(10.dp))
 
         Button(onClick = {
-            println("Buttona tıklandı")
-        } ) {
-            Text("Button")
+            println(username.value)
+            println(password.value)
+        }) {
+            Text("Login")
         }
-
-        Spacer(modifier = Modifier.padding(10.dp))
-
-        Ima
 
     }
 
+}
+
+@Composable
+fun MyTextField(str: String, onValueChangeFunction : (String)-> Unit){
+    TextField(value = str,onValueChangeFunction,Modifier.padding(10.dp))
+}
+
+@Composable
+fun MyText(str : String){
+    Text(text = str,
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Bold
+        )
 }
 
 @Preview(showBackground = true)
